@@ -13,7 +13,6 @@ Reto adicional: Implementa un método "modo aleatorio" que reproduzca canciones 
 hasta que se hayan reproducido todas.
 */
 public class musicPlayer {
-    private String song;
     private String title;
     private String artist;
     private boolean isPlaying;
@@ -21,21 +20,13 @@ public class musicPlayer {
 
     public  musicPlayer() {}
 
-    public musicPlayer(String song, String title, String artist, boolean isPlaying, boolean hasBeenPlayed) {
-        this.song = song;
+    public musicPlayer(String title, String artist, boolean isPlaying, boolean hasBeenPlayed) {
         this.title = title;
         this.artist = artist;
         this.isPlaying = isPlaying;
         this.hasBeenPlayed = hasBeenPlayed;
     }
 
-    public String getSong() {
-        return song;
-    }
-
-    public void setSong(String song) {
-        this.song = song;
-    }
 
     public String getTitle() {
         return title;
@@ -72,7 +63,6 @@ public class musicPlayer {
     @Override
     public String toString() {
         return "musicPlayer{" +
-                "song='" + song + '\'' +
                 ", title='" + title + '\'' +
                 ", artist='" + artist + '\'' +
                 ", isPlaying=" + isPlaying +
