@@ -10,15 +10,15 @@ Desarrolla una aplicación para gestionar tareas pendientes donde cada tarea tie
 Reto adicional: Implementa un método que ordene las tareas por prioridad automáticamente al insertar.
 */
 
-public class HomeworkList {
+public class homeworkList {
     private String task;
     private boolean taskStatus;
     private String taskDescription;
     private String priority;
 
-    public HomeworkList(){}
+    public homeworkList(){}
 
-    public HomeworkList(String task, boolean taskStatus, String taskDescription, String priority) {
+    public homeworkList(String task, boolean taskStatus, String taskDescription, String priority) {
         this.task = task;
         this.taskStatus = taskStatus;
         this.taskDescription = taskDescription;
@@ -59,7 +59,7 @@ public class HomeworkList {
 
     @Override
     public String toString() {
-        return "HomeworkList{" +
+        return "homeworkList{" +
                 "task='" + task + '\'' +
                 ", taskStatus=" + taskStatus +
                 ", taskDescription='" + taskDescription + '\'' +
