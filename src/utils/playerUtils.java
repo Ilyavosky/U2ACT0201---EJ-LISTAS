@@ -9,7 +9,7 @@ public class playerUtils {
 
     public playerUtils() {
         this.playlist = new LinkedList<>();
-        this.currentSongIndex = 0; // Empezamos en la primera canción
+        this.currentSongIndex = 0;
     }
 
 
