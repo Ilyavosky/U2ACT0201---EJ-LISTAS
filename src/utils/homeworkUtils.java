@@ -1,48 +1,60 @@
 package utils;
 
+import models.homeworkList;
 import java.util.LinkedList;
 
 public class homeworkUtils {
-    LinkedList<String> homeworkList = new LinkedList<>();
 
-    public static String addTask(LinkedList<String> homeworkList, String task) {
-        if (homeworkList.isEmpty()) {
-            System.out.println("La lista de tareas se encuentra vacía");
+    public static void addTask(LinkedList<homeworkList> list, homeworkList task) {
+        list.add(task);
+        System.out.println("Tarea agregada: " + task.getTask());
+    }
+
+    public static boolean completeAndEraseTask(LinkedList<homeworkList> list, homeworkList task) {
+        return list.remove(task);
+    }
+
+    public static void showPendentTasks(LinkedList<homeworkList> list) {
+        System.out.println("Tareas Pendiente:");
+        int count = 0;
+        for (homeworkList task : list) {
+            if (!task.isTaskStatus()) {
+                System.out.println(task);
+                count++;
+            }
         }
-        homeworkList.add(task);
-        return task;
-    }
 
-    public static boolean isCompleted(boolean taskStatus) {
-        return taskStatus;
-    }
-
-    public static boolean eraseTask(LinkedList<String> homeworkList, String task, boolean taskStatus) {
-        if (taskStatus == true){
-            homeworkList.remove(task);
+        if (count == 0) {
+            System.out.println("No hay tareas pendientes.");
         }
-        return true;
     }
 
-    public static boolean pendentTask(LinkedList<String> homeworkList, String task, boolean taskStatus) {
-        if (taskStatus == false){
-            System.out.println(homeworkList);
-        }else{
+    public static homeworkList getByDescription(String taskDescription, LinkedList<homeworkList> list) {
+        for (homeworkList task : list) {
+            if (task.getTaskDescription().equals(taskDescription)) {
+                return task;
+            }
+        }
+        return null;
+    }
+
+    public static void showPriorityTasks(LinkedList<homeworkList> list) {
+        System.out.println("Tareas Pendientes de Alta Prioridad");
+        int count = 0;
+        for (homeworkList task : list) {
+            if (task.getPriority().equalsIgnoreCase("alta") && !task.isTaskStatus()) {
+                System.out.println(task);
+                count++;
+            }
+        }
+
+        if (count == 0) {
             System.out.println("No hay tareas pendientes");
         }
-        return taskStatus;
+
     }
 
-    public static String getByDescription( String taskDescription, LinkedList<String> homeworkList){
-        String actual = homeworkList.getFirst();
-        while (actual != null){
-            if (actual.getDescription.equals(taskDescription)){
-                taskDescription = actual;
-                break;
-            }
-            actual = homeworkList.getNext(actual);
-        }
+    public static boolean isTaskCompleted(homeworkList task) {
+        return task.isTaskStatus();
     }
-
-
 }
