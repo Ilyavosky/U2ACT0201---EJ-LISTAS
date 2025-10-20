@@ -1,5 +1,6 @@
 package models;
-/*Ejercicio 1: Lista de Tareas Pendientes
+/*
+Ejercicio 1: Lista de Tareas Pendientes
 Desarrolla una aplicación para gestionar tareas pendientes donde cada tarea tiene una descripción y una prioridad (alta,
                                                                                                                    media, baja). La aplicación debe permitir:
 1.-Agregar tareas nuevas
